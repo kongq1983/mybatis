@@ -108,12 +108,17 @@ public class MybatisConfiguration {
 		try {
 			//加载mybatis配置文件
 			bean.setMapperLocations(resolver.getResources("classpath*:mapper/**/*.xml"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		try {
-			return bean.getObject();
+			
+			SqlSessionFactory obj = bean.getObject();
+			obj.getConfiguration().getTypeHandlerRegistry().register(com.kq.mybatis.typehandler.LocationTypeHandler.class);
+			
+			return obj;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

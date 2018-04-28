@@ -1,4 +1,7 @@
 package com.kq.mybatis.service;
+
+import com.kq.mybatis.entity.Account;
+
 /**
  * TODO
  * @author kongqi
@@ -8,5 +11,9 @@ package com.kq.mybatis.service;
 public interface AccountService {
 
 	public String getName(String id);
+	
+	public void insert(Account a);
+	
+	public Account getAccount(Long id);
 	
 }

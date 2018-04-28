@@ -3,6 +3,7 @@ package com.kq.mybatis.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kq.mybatis.entity.Account;
 import com.kq.mybatis.mapper.AccountMapper;
 import com.kq.mybatis.service.AccountService;
 
@@ -22,6 +23,14 @@ public class AccountServiceImpl implements AccountService {
 	public String getName(String id) {
 		System.out.println("id="+id);
 		return accountMapper.getName(id);
+	}
+	
+	public void insert(Account a) {
+		accountMapper.insert(a);
+	}
+	
+	public Account getAccount(Long id) {
+		return this.accountMapper.getAccount(id);
 	}
 
 }

@@ -1,4 +1,7 @@
 package com.kq.mybatis.mapper;
+
+import com.kq.mybatis.entity.Account;
+
 /**
  * TODO
  * @author kongqi
@@ -8,5 +11,10 @@ package com.kq.mybatis.mapper;
 public interface AccountMapper {
 	
 	public String getName(String id);
+	
+	
+	public void insert(Account a);
+	
+	public Account getAccount(Long id);
 
 }
