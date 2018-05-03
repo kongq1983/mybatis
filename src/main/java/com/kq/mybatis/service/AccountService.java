@@ -17,11 +17,11 @@ public interface AccountService {
 	public void insert(Account a);
 
 	public Map<String,Object> getAccountMap(Long id);
-	
+
 	public Account getAccount(Long id);
 
 	public Account getAccount1(Account a);
 
 
-	
+
 }

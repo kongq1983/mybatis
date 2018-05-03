@@ -2,8 +2,6 @@ package com.kq.mybatis.mapper;
 
 import com.kq.mybatis.entity.Account;
 
-import java.util.Map;
-
 /**
  * TODO
  * @author kongqi
