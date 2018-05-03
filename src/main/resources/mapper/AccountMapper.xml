@@ -25,4 +25,23 @@
 		select id,name,username,age,location from account t where t.id=#{id}
 	</select>
 
+	<select id="getAccountMap"  resultType="map">
+		select id,name,username,age,location from account t where t.id=#{id}
+
+	</select>
+
+	<select id="getAccount1" resultType="com.kq.mybatis.entity.Account" resultMap="accountMap">
+		select id,name,username,age,location from account t where t.id=#{id}
+		<if test="username!= null">
+			AND username=#{username}
+		</if>
+		<if test="name!= null">
+			AND name=#{name}
+		</if>
+	</select>
+
+
+
+
+
 </mapper>

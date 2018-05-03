@@ -1,10 +1,6 @@
 package com.kq.mybatis;
 
-import java.io.IOException;
-import java.sql.SQLException;
-
-import javax.sql.DataSource;
-
+import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -19,7 +15,9 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
 
-import com.alibaba.druid.pool.DruidDataSource;
+import javax.sql.DataSource;
+import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * TODO
@@ -59,7 +57,8 @@ public class MybatisConfiguration {
 	@Bean
 	public DataSource dataSource() {
 		DruidDataSource dataSource = new DruidDataSource();
-		dataSource.setUrl("jdbc:mysql://192.168.6.233:3306/test?useUnicode=true&characterEncoding=utf8");
+//		dataSource.setUrl("jdbc:mysql://192.168.6.233:3306/test?useUnicode=true&characterEncoding=utf8");
+		dataSource.setUrl("jdbc:mysql://192.168.3.200:3306/test?useUnicode=true&characterEncoding=utf8");
 		dataSource.setUsername("root");
 		dataSource.setPassword("123456");
 		// if (properties.getInitialSize() > 0) {

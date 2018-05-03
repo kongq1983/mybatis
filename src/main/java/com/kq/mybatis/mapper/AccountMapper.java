@@ -2,6 +2,8 @@ package com.kq.mybatis.mapper;
 
 import com.kq.mybatis.entity.Account;
 
+import java.util.Map;
+
 /**
  * TODO
  * @author kongqi
@@ -16,5 +18,9 @@ public interface AccountMapper {
 	public void insert(Account a);
 	
 	public Account getAccount(Long id);
+
+	public Map<String,Object> getAccountMap(Long id);
+
+	public Account getAccount1(Account a);
 
 }

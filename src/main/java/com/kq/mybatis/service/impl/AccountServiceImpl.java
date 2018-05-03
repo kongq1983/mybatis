@@ -7,6 +7,8 @@ import com.kq.mybatis.entity.Account;
 import com.kq.mybatis.mapper.AccountMapper;
 import com.kq.mybatis.service.AccountService;
 
+import java.util.Map;
+
 /**
  * TODO
  * @author kongqi
@@ -31,6 +33,14 @@ public class AccountServiceImpl implements AccountService {
 	
 	public Account getAccount(Long id) {
 		return this.accountMapper.getAccount(id);
+	}
+
+	public Map<String,Object> getAccountMap(Long id) {
+		return this.accountMapper.getAccountMap(id);
+	}
+
+	public Account getAccount1(Account a) {
+		return this.accountMapper.getAccount1(a);
 	}
 
 }

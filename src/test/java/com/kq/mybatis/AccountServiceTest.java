@@ -9,6 +9,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.kq.mybatis.entity.Account;
 import com.kq.mybatis.service.AccountService;
 
+import java.util.Map;
+
 /**
  * TODO
  * @author kongqi
@@ -58,5 +60,25 @@ public class AccountServiceTest {
 		
 		System.out.println("account="+account);
 	}
-	
+
+	@Test
+	public void testGetUserMap() {
+
+		Map<String,Object> account = accountService.getAccountMap(1l);
+
+		System.out.println("account="+account);
+	}
+
+	@Test
+	public void testGetAccount1() {
+
+		Account param = new Account();
+		param.setId(1l);
+		param.setUsername("admin");
+		param.setName("king");
+//		param.setUsername();
+		Account account = accountService.getAccount1(param);
+
+		System.out.println("account="+account);
+	}
 }
