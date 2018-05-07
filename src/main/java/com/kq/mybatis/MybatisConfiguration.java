@@ -1,8 +1,10 @@
 package com.kq.mybatis;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
@@ -122,6 +124,17 @@ public class MybatisConfiguration {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	/**
+	 * 批量处理
+	 * @return
+	 */
+	@Bean
+	public SqlSessionTemplate getSqlSessionTemplate(){
+		SqlSessionTemplate t = new SqlSessionTemplate(this.getSqlSessionFactory(),ExecutorType.BATCH);
+		return t;
+
 	}
 
 }
