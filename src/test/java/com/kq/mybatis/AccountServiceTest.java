@@ -81,4 +81,13 @@ public class AccountServiceTest {
 
 		System.out.println("account="+account);
 	}
+
+	@Test
+	public void addTransaction(){
+		Account param = new Account();
+		param.setId(1l);
+		param.setUsername("admin");
+		param.setName("king");
+		accountService.addTransaction(param);
+	}
 }

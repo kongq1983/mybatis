@@ -23,5 +23,6 @@ public interface AccountService {
 	public Account getAccount1(Account a);
 
 
+	public void addTransaction(Account a);
 
 }
