@@ -41,6 +41,40 @@
 	</select>
 
 
+	<select id="getAccountList" resultType="com.kq.mybatis.entity.Account" resultMap="accountMap">
+		select id,name,username,age,location from account t where 1=1
+
+		<bind name="num" value="0" />
+
+		<foreach collection="list" item="ss" index="index" separator=",">
+			<if test="ss.orderByField == 'soldAmount'">
+				<if test="ss.orderBy == -1">
+					<bind name="num" value="num+1" />
+				</if>
+			</if>
+			<if test="ss.orderByField == 'price'">
+				<if test="ss.orderBy == -1">
+					<bind name="num" value="num+1" />
+				</if>
+			</if>
+		</foreach>
+
+
+		<choose>
+			<when test="num==2">
+				and id=2
+			</when>
+			<otherwise>
+
+				and id=3
+
+			</otherwise>
+		</choose>
+
+
+	</select>
+
+
 
 
 

@@ -1,14 +1,19 @@
 package com.kq.mybatis;
 
+import com.kq.mybatis.entity.OrderBy;
+import com.kq.mybatis.mapper.AccountMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.kq.mybatis.entity.Account;
 import com.kq.mybatis.service.AccountService;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,6 +28,9 @@ public class AccountServiceTest {
 	
 	@Autowired
 	private AccountService accountService;
+
+	@Autowired
+	private AccountMapper accountMapper;
 	
 	
 	@Test
@@ -90,4 +98,30 @@ public class AccountServiceTest {
 		param.setName("king");
 		accountService.addTransaction(param);
 	}
+
+
+	@Test
+	public void testList() {
+//		VoNodeUser vo = userDao.getVoNodeUser("FF2A771A79234B1CB1D887F974F651CF");
+//		System.out.println(vo);
+//		List<VoNodeUser> voList = userDao.getVoNodeUsers(Lists.newArrayList("FF2A771A79234B1CB1D887F974F651CF"));
+//		System.out.println(voList);
+
+		OrderBy order1 = new OrderBy();
+		order1.setOrderBy(-1);
+		order1.setOrderByField("soldAmount");
+
+		OrderBy order2 = new OrderBy();
+		order2.setOrderBy(-11);
+		order2.setOrderByField("price");
+
+		List<OrderBy> list = new ArrayList<>();
+		list.add(order1);
+		list.add(order2);
+
+
+		accountMapper.getAccountList(list);
+
+	}
+
 }

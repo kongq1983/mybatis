@@ -1,7 +1,9 @@
 package com.kq.mybatis.mapper;
 
 import com.kq.mybatis.entity.Account;
+import com.kq.mybatis.entity.OrderBy;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,4 +25,6 @@ public interface AccountMapper {
 
 	public Account getAccount1(Account a);
 
+
+	public List<Account> getAccountList(List<OrderBy> list);
 }

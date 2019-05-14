@@ -60,7 +60,8 @@ public class MybatisConfiguration {
 	public DataSource dataSource() {
 		DruidDataSource dataSource = new DruidDataSource();
 //		dataSource.setUrl("jdbc:mysql://192.168.6.233:3306/test?useUnicode=true&characterEncoding=utf8");
-		dataSource.setUrl("jdbc:mysql://192.168.3.200:3306/test?useUnicode=true&characterEncoding=utf8");
+//		dataSource.setUrl("jdbc:mysql://192.168.3.200:3306/test?useUnicode=true&characterEncoding=utf8");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8");
 		dataSource.setUsername("root");
 		dataSource.setPassword("123456");
 		// if (properties.getInitialSize() > 0) {
